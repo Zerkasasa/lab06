@@ -21,7 +21,7 @@ jobs:
       
   - name: my_exe
     run: |
-      echo -e "1\n2\n1" | ${{github.workspace}}/_build/main
+      echo -e "1\n2\n1" | ${{github.workspace}}/_build/master
  
   - name: package
     run: cmake --build ${{github.workspace}}/_build --target package
