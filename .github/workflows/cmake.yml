@@ -1,5 +1,4 @@
 name: CMake_Build
-
 on:
   push:
     branches: [ master ]
@@ -7,7 +6,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build_Linux:
     runs-on: ubuntu-latest
     
     steps:
