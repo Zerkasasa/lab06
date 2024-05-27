@@ -5,21 +5,21 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-    
-jobs: 
-  build:
-    runs-on: ubuntu-latest
 
-    steps:
-    - name: checkout
-      uses: actions/checkout@v4
+jobs: 
+ build:
+ 
+  runs-on: ubuntu-latest
+
+  steps:
+  - uses: actions/checkout@v4
     
-    - name: Build 
-      run: |
-        cmake -H. -B_build
-        cmake --build _build
+  - name: Build 
+    run: |
+      cmake -H. -B_build
+      cmake --build _build
       
-    - name: my_exe
+  - name: my_exe
     run: |
       echo -e "1\n2\n1" | ${{github.workspace}}/_build/main
  
@@ -32,8 +32,8 @@ jobs:
   - name: Artifact
     uses: actions/upload-artifact@v4
     with:
-        name: main
-        path: ${{github.workspace}}/_build/main
+        name: master
+        path: ${{github.workspace}}/_build/master
 
   - name: Make a release
     uses: ncipollo/release-action@v1
