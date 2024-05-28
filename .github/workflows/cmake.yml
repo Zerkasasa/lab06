@@ -41,6 +41,6 @@ jobs:
     uses: ncipollo/release-action@v1.14.0
     with:
         artifacts: "${{github.workspace}}/_build/*.deb,${{github.workspace}}/_build/*.tar.gz,${{github.workspace}}/_build/*.zip"
-        tag: 1.0.0
+        tag: 1.1.0
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: tru
